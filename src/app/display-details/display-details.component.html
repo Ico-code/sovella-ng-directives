@@ -1,0 +1,30 @@
+<div class="container">
+    <button (click)="lokiPaivitys()" class="buttoner">Update</button>
+    <section>
+        <p class="details" [ngStyle]="{ 'display' : (show_details === true) ? 'block' : 'none' }">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem iste ex enim eum quod consequatur eius
+            architecto,
+            velit, saepe cum quisquam illum et magnam? Recusandae accusamus amet commodi quisquam nostrum sapiente ullam
+            earum
+            autem totam, neque inventore aut, vel nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+            ipsam optio eaque id earum et perferendis fuga pariatur laborum reprehenderit architecto repellat officia
+            impedit reiciendis recusandae tempore, tenetur corporis incidunt, alias tempora iste quasi? Dolore numquam
+            eveniet quam magnam sint quos dicta mollitia beatae modi, est cumque corrupti inventore soluta?
+        </p>
+    </section>
+    <hr>
+    <section>
+        <div *ngIf="loki.length > 0 else empty" class="luettelo">
+            <p class="texti-luettelossa" *ngFor="let logi of loki; index as i" [ngStyle]="{'background-color': i >=5 ? 'black' : ''}" [ngClass]="i >=5 ? 'blueText' : ''">
+                {{logi}}
+            </p>
+        </div>
+        <ng-template #empty>
+            <div class="luettelo">
+                <p>
+                    Loki has not been opened or closed
+                </p>
+            </div>
+        </ng-template>
+    </section>
+</div>
